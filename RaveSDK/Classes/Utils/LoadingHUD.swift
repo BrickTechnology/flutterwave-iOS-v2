@@ -11,8 +11,8 @@ import Lottie
 
 class LoadingHUD: UIView {
     //let appDelegate = UIApplication.shared.delegate as? AppDelegate
-    var animation:AnimationView!
-    
+    var animation:LottieAnimationView!
+
     var bgColor: UIColor? = .clear
     var applyBlur = true
     var animationFile = "Loader_YW"
@@ -22,31 +22,31 @@ class LoadingHUD: UIView {
         effectView.translatesAutoresizingMaskIntoConstraints = false
         return effectView
     }()
-    
+
     class func shared() -> LoadingHUD{
         struct Static {
             static let loader = LoadingHUD(frame: (UIScreen.main.bounds))
-            
+
         }
         return Static.loader
     }
-    
-    
-    
+
+
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
     }
-    
+
     func setupUI(){
-        
+
     }
-    
+
     func show(){
         backgroundColor = bgColor
         if(applyBlur){
@@ -56,8 +56,8 @@ class LoadingHUD: UIView {
             blurView.topAnchor.constraint(equalTo: topAnchor).isActive = true
             blurView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         }
-		
-        
+
+
 		animation = AnimationView(name: animationFile, bundle: Bundle.getResourcesBundle() ?? Bundle.main)
         animation.loopMode = .loop
         animation.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ class LoadingHUD: UIView {
         animation.centerYAnchor.constraint(equalTo:centerYAnchor).isActive = true
         animation.widthAnchor.constraint(equalToConstant: 80).isActive = true
         animation.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        
+
         self.animation.play()
         UIApplication.shared.keyWindow?.addSubview(self)
         isHidden = false
@@ -80,8 +80,8 @@ class LoadingHUD: UIView {
             blurView.topAnchor.constraint(equalTo: topAnchor).isActive = true
             blurView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         }
-        
-        animation = AnimationView(name: animationFile)
+
+        animation = LottieAnimationView(name: animationFile)
         animation.loopMode = .loop
         animation.translatesAutoresizingMaskIntoConstraints = false
         addSubview(animation)
@@ -89,13 +89,13 @@ class LoadingHUD: UIView {
         animation.centerYAnchor.constraint(equalTo:centerYAnchor).isActive = true
         animation.widthAnchor.constraint(equalToConstant: 80).isActive = true
         animation.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        
+
         self.animation.play()
         view.addSubview(self)
-        
+
         isHidden = false
     }
-    
+
     func hide(){
 //        animation.stop()
         isHidden = true

@@ -15,7 +15,6 @@ public enum AuthModel{
 }
 public class RaveConfig {
     public var publicKey:String?
-   // public var secretKey:String?
     public var encryptionKey:String?
     public var isStaging:Bool = true
     public var email:String?
@@ -30,11 +29,15 @@ public class RaveConfig {
     public var meta:[[String:String]]?
     public var subAccounts:[SubAccount]?
     public var whiteListedBanksOnly:[String]?
+    public var cardNumber:String?
+    public var cvv:String?
+    public var expYear:String?
+    public var expMonth:String?
 
     public class func sharedConfig() -> RaveConfig {
         struct Static {
             static let kbManager = RaveConfig()
-            
+
         }
         return Static.kbManager
     }

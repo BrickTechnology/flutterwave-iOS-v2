@@ -19,7 +19,7 @@ class DebitCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         return label
     }()
-    
+
     lazy var cardfieldContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -36,7 +36,7 @@ class DebitCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
-    
+
     lazy var cardExpiryTitle: UILabel = {
         let label = UILabel()
         label.text = "VALID TILL"
@@ -45,7 +45,7 @@ class DebitCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
-    
+
     lazy var cardCVVTitle: UILabel = {
         let label = UILabel()
         label.text = "CVV"
@@ -54,7 +54,7 @@ class DebitCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
-    
+
     lazy var cardNumberTextField: VSTextField = {
         let text = VSTextField()
         text.setFormatting("xxxx xxxx xxxx xxxx xxxx", replacementChar: "x")
@@ -111,7 +111,7 @@ class DebitCardView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var whatsCVVButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("What is this?", for: .normal)
@@ -121,43 +121,43 @@ class DebitCardView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 		let bundle = Bundle.getResourcesBundle()
-		print(bundle)
+		// print(bundle)
         backgroundColor = UIColor(hex: "#F2F2F2")
-        addSubview(titleInfo)
-        addSubview(cardfieldContainer)
-        
-         addSubview(rememberCardCheck)
-         addSubview(rememberCardText)
-         addSubview(cardPayButton)
-        
-        cardfieldContainer.addSubview(cardNumberTitle)
-       cardfieldContainer.addSubview(cardNumberTextField)
-        cardfieldContainer.addSubview(cardExpiryTitle)
-        cardfieldContainer.addSubview(cardExpiry)
-        cardfieldContainer.addSubview(cardCVVTitle)
-        cardfieldContainer.addSubview(cardCVV)
-        cardfieldContainer.addSubview(horizontalDividerView)
-        cardfieldContainer.addSubview(verticalDividerView)
-        cardfieldContainer.addSubview(whatsCVVButton)
-        setupConstriant()
+       //  addSubview(titleInfo)
+       //  addSubview(cardfieldContainer)
+       //
+       //   addSubview(rememberCardCheck)
+       //   addSubview(rememberCardText)
+       //   addSubview(cardPayButton)
+       //
+       //  cardfieldContainer.addSubview(cardNumberTitle)
+       //  cardfieldContainer.addSubview(cardNumberTextField)
+       //  cardfieldContainer.addSubview(cardExpiryTitle)
+       //  cardfieldContainer.addSubview(cardExpiry)
+       //  cardfieldContainer.addSubview(cardCVVTitle)
+       //  cardfieldContainer.addSubview(cardCVV)
+       //  cardfieldContainer.addSubview(horizontalDividerView)
+       //  cardfieldContainer.addSubview(verticalDividerView)
+       //  cardfieldContainer.addSubview(whatsCVVButton)
+       //  setupConstriant()
     }
-    
+
     func setupConstriant(){
         NSLayoutConstraint.activate([
             titleInfo.leadingAnchor.constraint(equalTo: leadingAnchor, constant:20),
             titleInfo.topAnchor.constraint(equalTo: topAnchor, constant:20),
             titleInfo.trailingAnchor.constraint(equalTo: trailingAnchor, constant:-20),
             titleInfo.heightAnchor.constraint(equalToConstant: 55),
-            
+
             cardfieldContainer.topAnchor.constraint(equalTo: titleInfo.bottomAnchor, constant: 24),
             cardfieldContainer.leadingAnchor.constraint(equalTo: titleInfo.leadingAnchor),
             cardfieldContainer.trailingAnchor.constraint(equalTo: titleInfo.trailingAnchor),
             cardfieldContainer.heightAnchor.constraint(equalToConstant: 153),
-            
+
             cardNumberTitle.leadingAnchor.constraint(equalTo: cardfieldContainer.leadingAnchor, constant: 18),
             cardNumberTitle.topAnchor.constraint(equalTo: cardfieldContainer.topAnchor, constant: 18),
             cardNumberTextField.topAnchor.constraint(equalTo: cardNumberTitle.bottomAnchor, constant: 4
@@ -195,23 +195,23 @@ class DebitCardView: UIView {
             whatsCVVButton.topAnchor.constraint(equalTo: cardCVVTitle.topAnchor),
             whatsCVVButton.heightAnchor.constraint(equalToConstant: 15),
             whatsCVVButton.trailingAnchor.constraint(equalTo: cardfieldContainer.trailingAnchor, constant: -20),
-            
+
             rememberCardCheck.leadingAnchor.constraint(equalTo: cardfieldContainer.leadingAnchor),
             rememberCardCheck.topAnchor.constraint(equalTo: cardfieldContainer.bottomAnchor, constant:14),
-            
+
             rememberCardCheck.heightAnchor.constraint(equalToConstant: 32),
             rememberCardCheck.widthAnchor.constraint(equalToConstant: 39),
-            
-            
+
+
             rememberCardText.leadingAnchor.constraint(equalTo: rememberCardCheck.trailingAnchor, constant: 8),
             rememberCardText.centerYAnchor.constraint(equalTo: rememberCardCheck.centerYAnchor),
-            
+
             cardPayButton.leadingAnchor.constraint(equalTo: cardfieldContainer.leadingAnchor),
             cardPayButton.trailingAnchor.constraint(equalTo: cardfieldContainer.trailingAnchor),
             cardPayButton.topAnchor.constraint(equalTo: rememberCardCheck.bottomAnchor, constant: 20),
             cardPayButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            
+
+
             rememberCardText.bottomAnchor.constraint(equalTo: cardPayButton.topAnchor, constant: -8)
         ])
     }
