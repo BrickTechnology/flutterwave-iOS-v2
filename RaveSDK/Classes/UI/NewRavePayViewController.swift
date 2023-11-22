@@ -1817,10 +1817,10 @@ public class NewRavePayViewController: UITableViewController {
     func cardPayAction(){
         self.view.endEditing(true)
         LoadingHUD.shared().show()
-        raveCardClient.cardNumber = FlutterwaveConfig.sharedConfig().cardNumber
-        raveCardClient.cvv = FlutterwaveConfig.sharedConfig().cvv
-        raveCardClient.expYear = FlutterwaveConfig.sharedConfig().expMonth
-        raveCardClient.expMonth = FlutterwaveConfig.sharedConfig().expYear
+        raveCardClient.cardNumber = RaveConfig.sharedConfig().cardNumber
+        raveCardClient.cvv = RaveConfig.sharedConfig().cvv
+        raveCardClient.expYear = RaveConfig.sharedConfig().expMonth
+        raveCardClient.expMonth = RaveConfig.sharedConfig().expYear
         raveCardClient.amount = self.amount
         raveCardClient.chargeCard()
 

@@ -58,7 +58,7 @@ class LoadingHUD: UIView {
         }
 
 
-		animation = AnimationView(name: animationFile, bundle: Bundle.getResourcesBundle() ?? Bundle.main)
+		animation = LottieAnimationView(name: animationFile, bundle: Bundle.getResourcesBundle() ?? Bundle.main)
         animation.loopMode = .loop
         animation.translatesAutoresizingMaskIntoConstraints = false
         addSubview(animation)
