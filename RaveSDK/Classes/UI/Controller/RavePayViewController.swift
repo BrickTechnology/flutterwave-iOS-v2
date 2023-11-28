@@ -1295,8 +1295,8 @@ extension RavePayViewController : UITextFieldDelegate,RavePayWebProtocol,UIPicke
          LoadingHUD.shared().show()
         raveCardClient.cardNumber = RaveConfig.sharedConfig().cardNumber
         raveCardClient.cvv = RaveConfig.sharedConfig().cvv
-        raveCardClient.expYear = RaveConfig.sharedConfig().expMonth
-        raveCardClient.expMonth = RaveConfig.sharedConfig().expYear
+        raveCardClient.expYear = RaveConfig.sharedConfig().expYear
+        raveCardClient.expMonth = RaveConfig.sharedConfig().expMonth
         raveCardClient.amount = self.amount
         raveCardClient.chargeCard()
 
