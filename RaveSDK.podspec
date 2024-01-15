@@ -41,5 +41,5 @@ TODO: Add long description of the pod here.
    s.frameworks = 'UIKit'
    s.dependency 'IQKeyboardManagerSwift'
    s.dependency 'lottie-ios'
-   s.dependency 'Alamofire','5.2.1'
+   s.dependency 'Alamofire','4.0'
 end
