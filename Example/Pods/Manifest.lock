@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0)
+  - Alamofire (5.2.1)
   - IQKeyboardManagerSwift (6.5.5)
   - lottie-ios (3.0.7)
   - RaveSDK (2.0.6):
